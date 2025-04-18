@@ -17,7 +17,6 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
             background: "#dbeafe",
             color: "#1e40af",
             borderRadius: "8px",
-            padding: "12px 16px",
           },
         }
       );
@@ -30,7 +29,6 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
             background: "#fce7f3",
             color: "#be185d",
             borderRadius: "8px",
-            padding: "12px 16px",
           },
         }
       );

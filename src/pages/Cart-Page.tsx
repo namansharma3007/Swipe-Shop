@@ -32,7 +32,6 @@ export default function Cart() {
             background: "#bbf7d0",
             color: "#16a34a",
             borderRadius: "8px",
-            padding: "12px 16px",
           },
         }
       );
