@@ -9,7 +9,7 @@ import { Toaster } from "react-hot-toast";
 export default function App() {
   return (
     <>
-      <Toaster position="top-center" />
+      <Toaster position="bottom-center" />
       <main
         style={{ paddingTop: "env(safe-area-inset-top)" }}
         className="flex justify-center h-max min-h-screen w-full bg-gray-400"
