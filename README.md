@@ -54,23 +54,6 @@ npm run dev
 npm run build
 ```
 
-## 🏗️ Project Structure
-
-```
-swipe-shop/
-├── src/
-│   ├── assets/         # Static assets
-│   ├── components/     # Reusable components
-│   ├── context/        # React context providers
-│   ├── pages/          # Page components
-│   ├── types/          # TypeScript type definitions
-│   ├── App.tsx         # Main application component
-│   └── main.tsx        # Application entry point
-├── utils/              # Utility functions
-├── constants/          # Application constants
-└── public/             # Public assets
-```
-
 ## 🚀 Development
 
 The application runs on port 3000 by default. You can access it at `http://localhost:3000`.
