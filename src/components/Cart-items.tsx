@@ -16,7 +16,7 @@ export function CartItem({ apparel }: { apparel: Apparel }) {
   };
 
   return (
-    <div className="w-full flex gap-3 bg-white shadow-sm rounded-xl p-3">
+    <div className="w-full flex gap-3 bg-white shadow-lg rounded-xl p-3">
       {/* Image */}
       <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
         <img

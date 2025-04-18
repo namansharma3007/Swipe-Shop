@@ -40,7 +40,7 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
   };
 
   return (
-    <div className="flex flex-col justify-between rounded-2xl overflow-hidden bg-white shadow-sm h-[400px]">
+    <div className="flex flex-col justify-between rounded-2xl overflow-hidden bg-white shadow-md h-[400px]">
       <div className="relative h-[260px] w-full">
         <img
           src={apparel.imageUrl}
