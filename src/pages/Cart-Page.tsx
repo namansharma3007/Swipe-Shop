@@ -3,14 +3,9 @@ import { CartItem } from "../components/Cart-items";
 import { useCart } from "../context/CartContext";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { toast } from "react-hot-toast";
-import useSound from "use-sound";
-import NOTIFICATION from "../assets/notification-success-1.mp3";
 
 export default function Cart() {
-  const { cartItems, getTotalCartAmount, getDiscountAmount, clearCart } =
-    useCart();
-
-  const [play] = useSound(NOTIFICATION);
+  const { cartItems, getTotalCartAmount, getDiscountAmount, clearCart } = useCart();
 
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -35,7 +30,6 @@ export default function Cart() {
           },
         }
       );
-      play();
       clearCart();
     }
   };
