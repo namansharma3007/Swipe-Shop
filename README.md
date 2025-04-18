@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./public/favicon.jpeg" height="100" width="100" alt="PollChain"/>
+  <img src="./public/favicon.png" height="100" width="100" alt="PollChain"/>
 </div>
 
 # Swipe Shop
