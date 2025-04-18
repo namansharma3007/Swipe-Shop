@@ -16,7 +16,6 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
           style: {
             background: "#dbeafe",
             color: "#1e40af",
-            fontWeight: "500",
             borderRadius: "8px",
             padding: "12px 16px",
           },
@@ -30,7 +29,6 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
           style: {
             background: "#fce7f3",
             color: "#be185d",
-            fontWeight: "500",
             borderRadius: "8px",
             padding: "12px 16px",
           },

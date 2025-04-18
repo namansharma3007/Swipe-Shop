@@ -31,7 +31,6 @@ export default function Cart() {
           style: {
             background: "#bbf7d0",
             color: "#16a34a",
-            fontWeight: "500",
             borderRadius: "8px",
             padding: "12px 16px",
           },

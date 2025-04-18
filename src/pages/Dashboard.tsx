@@ -43,7 +43,6 @@ export default function Dashboard() {
             style: {
               background: "#fce7f3",
               color: "#be185d",
-              fontWeight: "500",
               borderRadius: "8px",
               padding: "12px 16px",
             },
@@ -58,7 +57,6 @@ export default function Dashboard() {
             style: {
               background: "#dbeafe",
               color: "#1e40af",
-              fontWeight: "500",
               borderRadius: "8px",
               padding: "12px 16px",
             },
@@ -72,7 +70,6 @@ export default function Dashboard() {
             style: {
               background: "#f3f4f6",
               color: "#4b5563",
-              fontWeight: "500",
               borderRadius: "8px",
               padding: "12px 16px",
             },
