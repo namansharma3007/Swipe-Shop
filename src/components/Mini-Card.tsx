@@ -10,28 +10,24 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
 
   const handleAddCart = (apparel: Apparel) => {
     if (quantity === 0) {
-      toast('🛍️ Item added to your cart!',
-        {
-          duration: 1500,
-          style: {
-            background: "#dbeafe",
-            color: "#1e40af",
-            borderRadius: "8px",
-          },
-        }
-      );
+      toast("🛍️ Item added to your cart!", {
+        duration: 1500,
+        style: {
+          background: "#dbeafe",
+          color: "#1e40af",
+          borderRadius: "8px",
+        },
+      });
       addToCart(apparel);
     } else {
-      toast('❤️ Item already in your cart!',
-          {
-          duration: 1500,
-          style: {
-            background: "#fce7f3",
-            color: "#be185d",
-            borderRadius: "8px",
-          },
-        }
-      );
+      toast("❤️ Item already in your cart!", {
+        duration: 1500,
+        style: {
+          background: "#fce7f3",
+          color: "#be185d",
+          borderRadius: "8px",
+        },
+      });
     }
   };
 

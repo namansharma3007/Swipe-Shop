@@ -17,7 +17,6 @@ export function CartItem({ apparel }: { apparel: Apparel }) {
 
   return (
     <div className="w-full flex gap-3 bg-white shadow-lg rounded-xl p-3">
-      {/* Image */}
       <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
         <img
           src={apparel.imageUrl}
@@ -26,7 +25,6 @@ export function CartItem({ apparel }: { apparel: Apparel }) {
         />
       </div>
 
-      {/* Details */}
       <div className="flex-1 flex flex-col justify-between py-1">
         <h3 className="font-semibold capitalize text-sm line-clamp-1">
           {apparel.name}

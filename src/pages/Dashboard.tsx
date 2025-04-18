@@ -33,45 +33,38 @@ export default function Dashboard() {
   const swiped = (direction: string, apparel: Apparel, index: number) => {
     updateCurrentIndex(index - 1);
 
-    // Only handle allowed swipe directions
     switch (direction) {
       case "right":
         toggleLikeItem(apparel);
-        toast('❤️ Added to your favorites!',
-          {
-            duration: 1500,
-            style: {
-              background: "#fce7f3",
-              color: "#be185d",
-              borderRadius: "8px",
-            },
-          }
-        );
+        toast("❤️ Added to your favorites!", {
+          duration: 1500,
+          style: {
+            background: "#fce7f3",
+            color: "#be185d",
+            borderRadius: "8px",
+          },
+        });
         break;
       case "up":
         addToCart(apparel);
-        toast("🛍️ Added to your cart!",
-          {
-            duration: 1500,
-            style: {
-              background: "#dbeafe",
-              color: "#1e40af",
-              borderRadius: "8px",
-            },
-          }
-        );
+        toast("🛍️ Added to your cart!", {
+          duration: 1500,
+          style: {
+            background: "#dbeafe",
+            color: "#1e40af",
+            borderRadius: "8px",
+          },
+        });
         break;
       case "left":
-        toast("👋 See you later!",
-          {
-            duration: 1500,
-            style: {
-              background: "#f3f4f6",
-              color: "#4b5563",
-              borderRadius: "8px",
-            },
-          }
-        );
+        toast("👋 See you later!", {
+          duration: 1500,
+          style: {
+            background: "#f3f4f6",
+            color: "#4b5563",
+            borderRadius: "8px",
+          },
+        });
         break;
       default:
         childRefs[index].current.restoreCard();
@@ -99,9 +92,9 @@ export default function Dashboard() {
             onSwipe={(dir) => swiped(dir, apparel, index)}
             onCardLeftScreen={() => outOfFrame(index)}
             className="absolute w-full"
-            preventSwipe={["down"]} // Prevent downward swipes
+            preventSwipe={["down"]}
             swipeRequirementType="position"
-            swipeThreshold={100} // Increase threshold for more intentional swipes
+            swipeThreshold={100}
           >
             <Card apparel={apparel} />
           </TinderCard>

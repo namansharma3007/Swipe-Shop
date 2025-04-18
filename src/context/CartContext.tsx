@@ -28,7 +28,6 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [allApparels, setAllApparels] = useState<Apparel[]>([]);
 
-  // Initialize data on component mount
   useEffect(() => {
     setAllApparels(data);
   }, []);

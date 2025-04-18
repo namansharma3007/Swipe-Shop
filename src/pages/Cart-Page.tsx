@@ -5,7 +5,8 @@ import { IoBagHandleOutline } from "react-icons/io5";
 import { toast } from "react-hot-toast";
 
 export default function Cart() {
-  const { cartItems, getTotalCartAmount, getDiscountAmount, clearCart } = useCart();
+  const { cartItems, getTotalCartAmount, getDiscountAmount, clearCart } =
+    useCart();
 
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -52,14 +53,12 @@ export default function Cart() {
         </div>
       ) : (
         <>
-          {/* Cart Items */}
           <div className="flex-1 flex flex-col gap-3 p-4">
             {cartItems.map((apparel) => (
               <CartItem key={apparel.id} apparel={apparel} />
             ))}
           </div>
 
-          {/* Order Summary */}
           <div className="bg-white p-4 flex flex-col gap-4 border-t border-b border-gray-200">
             <h2 className="font-bold text-lg">Order Summary</h2>
 

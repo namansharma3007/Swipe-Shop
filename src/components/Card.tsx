@@ -3,7 +3,6 @@ import { formatNumberWithCommas } from "../../utils/utils";
 export function Card({ apparel }: { apparel: Apparel }) {
   return (
     <div className="flex flex-col overflow-hidden rounded-xl w-full shadow-lg bg-gray-50">
-      {/* Image Product */}
       <div className="w-full h-[400px] relative">
         <img
           src={apparel.imageUrl}

@@ -8,18 +8,16 @@ export default function Home() {
   return (
     <section className="flex flex-col relative min-h-full">
       <div className="flex flex-col relative w-full">
-        {/* Background Image Container */}
         <div className="w-full h-full relative">
           <img
             src={BG_IMAGE2}
             alt="shop"
             className="w-full h-full object-cover"
           />
-          {/* Gradient Overlay */}
+
           <div className="absolute inset-0 bg-gradient-to-t from-white/100 via-white/50 to-transparent"></div>
         </div>
 
-        {/* Content Container */}
         <div className="flex flex-col gap-8 px-8 -mt-32 relative z-10 rounded-t-[2rem] min-h-[60vh]">
           <div className="flex flex-col pt-8">
             <div className="flex gap-2 flex-col items-center justify-center">
