@@ -44,7 +44,7 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
           className="w-full h-full object-cover object-center"
         />
         {apparel.discountPercentage !== 0 && (
-          <span className="py-1 px-3 rounded-full bg-red-500 text-white font-semibold text-xs absolute z-10 top-3 left-3">
+          <span className="py-1 px-3 rounded-full bg-red-500 text-white font-medium text-xs absolute z-10 top-3 left-3">
             -{apparel.discountPercentage}%
           </span>
         )}
