@@ -4,13 +4,13 @@ import { useCart } from "../context/CartContext";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { toast } from "react-hot-toast";
 import useSound from "use-sound";
-import SUCCESS from "../assets/success.mp3";
+import NOTIFICATION from "../assets/notification.mp3";
 
 export default function Cart() {
   const { cartItems, getTotalCartAmount, getDiscountAmount, clearCart } =
     useCart();
 
-  const [play] = useSound(SUCCESS);
+  const [play] = useSound(NOTIFICATION);
 
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -33,9 +33,7 @@ export default function Cart() {
 
   return (
     <section
-      className={`flex flex-col bg-gray-50 ${
-        cartItems.length === 0 ? "h-screen" : "h-max"
-      }`}
+      className="flex flex-col bg-gray-50 h-max"
     >
       {cartItems.length === 0 ? (
         <div className="flex-1 flex flex-col items-center mt-10 p-8">
