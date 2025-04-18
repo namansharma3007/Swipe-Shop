@@ -10,10 +10,10 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
 
   const handleAddCart = (apparel: Apparel) => {
     if (quantity === 0) {
-      toast.success("Item added to your cart!");
+      toast.success("Item added to your cart!", { duration: 2000 });
       addToCart(apparel);
     } else {
-      toast("Item already in your cart", { icon: "👋" });
+      toast("Item already in your cart!", { icon: "👋", duration: 2000 });
     }
   };
 
@@ -25,9 +25,11 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
           alt={apparel.name}
           className="w-full h-full object-cover object-center"
         />
-        <span className="py-1 px-3 rounded-full bg-red-500 text-white font-semibold text-xs absolute z-10 top-3 left-3">
-          -{apparel.discountPercentage}%
-        </span>
+        {apparel.discountPercentage !== 0 && (
+          <span className="py-1 px-3 rounded-full bg-red-500 text-white font-semibold text-xs absolute z-10 top-3 left-3">
+            -{apparel.discountPercentage}%
+          </span>
+        )}
         <button
           type="button"
           className="p-2 rounded-full bg-white absolute right-3 top-3 text-red-500 cursor-pointer shadow-sm"
@@ -54,9 +56,11 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
               getDiscountedPrice(apparel.price, apparel.discountPercentage)
             )}
           </span>
-          <span className="line-through text-gray-400">
-            ₹{formatNumberWithCommas(apparel.price)}
-          </span>
+          {apparel.discountPercentage !== 0 && (
+            <span className="line-through text-gray-400">
+              ₹{formatNumberWithCommas(apparel.price)}
+            </span>
+          )}
         </div>
 
         <div className="flex justify-end">

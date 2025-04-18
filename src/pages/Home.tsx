@@ -1,4 +1,4 @@
-import BG_IMAGE2 from "../assets/background2.png";
+import BG_IMAGE2 from "../assets/background.png";
 import { FaHeart } from "react-icons/fa";
 import { IoCart } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";

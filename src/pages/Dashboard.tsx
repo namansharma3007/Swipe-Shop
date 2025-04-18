@@ -14,7 +14,6 @@ export default function Dashboard() {
   const currentIndexRef = useRef(currentIndex);
   const { addToCart, toggleLikeItem } = useCart();
 
-
   const childRefs = useMemo(
     () =>
       Array(data.length)
@@ -89,12 +88,18 @@ export default function Dashboard() {
               or liked items to see what you've saved!
             </p>
             <div className="flex gap-4 mt-2">
-              <Link to="/cart" className="flex items-center justify-between gap-2 px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg hover:bg-blue-600 transition-colors cursor-pointer">
-                <IoCart size={18}/>
+              <Link
+                to="/cart"
+                className="flex items-center justify-between gap-2 px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg hover:bg-blue-600 transition-colors cursor-pointer"
+              >
+                <IoCart size={18} />
                 View Cart
               </Link>
-              <Link to="/liked" className="flex items-center justify-between gap-2 px-4 py-2 bg-pink-500 text-white text-sm font-medium rounded-lg hover:bg-pink-600 transition-colors cursor-pointer">
-                <IoMdHeartEmpty size={18}/>
+              <Link
+                to="/liked"
+                className="flex items-center justify-between gap-2 px-4 py-2 bg-pink-500 text-white text-sm font-medium rounded-lg hover:bg-pink-600 transition-colors cursor-pointer"
+              >
+                <IoMdHeartEmpty size={18} />
                 View Liked
               </Link>
             </div>

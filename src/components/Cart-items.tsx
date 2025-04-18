@@ -3,7 +3,8 @@ import { formatNumberWithCommas, getDiscountedPrice } from "../../utils/utils";
 import { useCart } from "../context/CartContext";
 
 export function CartItem({ apparel }: { apparel: Apparel }) {
-  const { removeFromCart, updateCartItemQuantity, getCartItemQuantity } = useCart();
+  const { removeFromCart, updateCartItemQuantity, getCartItemQuantity } =
+    useCart();
   const quantity = getCartItemQuantity(apparel.id);
 
   const handleDecreaseQuantity = () => {
@@ -34,14 +35,21 @@ export function CartItem({ apparel }: { apparel: Apparel }) {
 
         <div className="flex items-center gap-2 text-sm">
           <span className="font-bold">
-            ₹{formatNumberWithCommas(getDiscountedPrice(apparel.price, apparel.discountPercentage))}
+            ₹
+            {formatNumberWithCommas(
+              getDiscountedPrice(apparel.price, apparel.discountPercentage)
+            )}
           </span>
-          <span className="text-gray-400 line-through text-sm">
-            ₹{formatNumberWithCommas(apparel.price)}
-          </span>
-          <span className="text-red-500 text-sm">
-            -{apparel.discountPercentage}%
-          </span>
+          {apparel.discountPercentage !== 0 && (
+            <>
+              <span className="text-gray-400 line-through text-sm">
+                ₹{formatNumberWithCommas(apparel.price)}
+              </span>
+              <span className="text-red-500 text-sm">
+                -{apparel.discountPercentage}%
+              </span>
+            </>
+          )}
         </div>
 
         <div className="flex justify-between items-center mt-2">

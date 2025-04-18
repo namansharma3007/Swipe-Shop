@@ -80,13 +80,72 @@ The application runs on port 3000 by default. You can access it at `http://local
 
 ## 📱 Mobile Development
 
-This project uses Capacitor for mobile development. To build for Android:
+This project uses Capacitor for mobile development. To set up and run the Android emulator with live reloading:
+
+### Prerequisites
+
+1. Install [Android Studio](https://developer.android.com/studio)
+2. Install Android SDK and create an Android Virtual Device (AVD) through Android Studio
+3. Make sure you have Java Development Kit (JDK) installed
+
+### Setup and Live Reloading
+
+1. First, build your web app:
 
 ```bash
 npm run build
+```
+
+2. Add Android platform to your project:
+
+```bash
+npx cap add android
+```
+
+3. Sync your web app with Android project:
+
+```bash
 npx cap sync android
+```
+
+4. Open Android Studio:
+
+```bash
 npx cap open android
 ```
+
+5. In Android Studio:
+
+   - Select your AVD from the device dropdown
+   - Click the "Run" button (green play icon) to start the emulator
+
+6. For live reloading during development:
+   - Start the Vite development server:
+   ```bash
+   npm run dev
+   ```
+   - In a new terminal, run:
+   ```bash
+   npx cap run android --live-reload
+   ```
+   This will open your app in the emulator and automatically reload when you make changes to your code.
+
+### Common Issues and Solutions
+
+1. If you get a "Could not find or load main class" error:
+
+   - Make sure you have the correct JDK version installed
+   - Set JAVA_HOME environment variable
+
+2. If the app doesn't reload automatically:
+
+   - Make sure your development server is running
+   - Check if the emulator is properly connected
+   - Try restarting the development server
+
+3. If you make changes to native code:
+   - Run `npx cap sync android` to sync the changes
+   - Restart the app in the emulator
 
 ## 🤝 Contributing
 

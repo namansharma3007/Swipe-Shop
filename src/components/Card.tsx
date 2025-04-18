@@ -1,7 +1,6 @@
 import { formatNumberWithCommas } from "../../utils/utils";
 
-export function Card({ apparel }: {apparel: Apparel}) {
-
+export function Card({ apparel }: { apparel: Apparel }) {
   return (
     <div className="flex flex-col overflow-hidden rounded-xl w-full shadow-lg bg-gray-50">
       {/* Image Product */}
@@ -16,7 +15,6 @@ export function Card({ apparel }: {apparel: Apparel}) {
             -{apparel.discountPercentage}%
           </span>
         )}
-        
       </div>
 
       <div className="flex flex-col gap-2 p-4">
@@ -27,7 +25,9 @@ export function Card({ apparel }: {apparel: Apparel}) {
           </span>
         </div>
         <div className="flex w-max gap-2 items-center justify-between">
-          <span className="font-bold">₹{formatNumberWithCommas(apparel.price)}</span>
+          <span className="font-bold">
+            ₹{formatNumberWithCommas(apparel.price)}
+          </span>
           {apparel.discountPercentage !== 0 && (
             <span className="font-medium line-through text-gray-400">
               ₹{formatNumberWithCommas(apparel.originalPrice)}
