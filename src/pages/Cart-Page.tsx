@@ -67,7 +67,7 @@ export default function Cart() {
           </div>
 
           {/* Order Summary */}
-          <div className="bg-white p-4 flex flex-col gap-4 border-t border-b">
+          <div className="bg-white p-4 flex flex-col gap-4 border-t border-b border-gray-200">
             <h2 className="font-bold text-lg">Order Summary</h2>
 
             <div className="flex flex-col gap-3 text-[15px]">

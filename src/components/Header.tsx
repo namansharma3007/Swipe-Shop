@@ -38,14 +38,14 @@ export function Header() {
       <h1 className="font-semibold text-xl">{headerTitle}</h1>
 
       <div className="flex gap-3 items-center justify-between">
-        <Link to="/dashboard" className="cursor-pointer p-1">
-          <IoIosSearch size={24} />
-        </Link>
         {!isHomePage && (
           <Link to="/" className="cursor-pointer p-1" replace>
             <IoHomeOutline size={24} />
           </Link>
         )}
+        <Link to="/dashboard" className="cursor-pointer p-1">
+          <IoIosSearch size={24} />
+        </Link>
         <Link to="/liked" className="cursor-pointer p-1 relative">
           <IoMdHeartEmpty size={24} />
           {likedItems.length > 0 && (
