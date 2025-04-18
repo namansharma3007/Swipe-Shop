@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./public/favicon.jpeg" height="100" width="100" alt="PollChain"/>
+</div>
+
 # Swipe Shop
 
 A modern e-commerce application built with React, TypeScript, and Vite that features a Tinder-like swiping interface for product discovery.
