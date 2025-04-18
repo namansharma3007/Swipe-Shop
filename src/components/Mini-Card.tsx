@@ -2,6 +2,7 @@ import { formatNumberWithCommas, getDiscountedPrice } from "../../utils/utils";
 import { FaHeart, FaCartPlus } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 import { toast } from "react-hot-toast";
+import { capitalizeWords } from "../../utils/utils";
 
 export function MiniCard({ apparel }: { apparel: Apparel }) {
   const { toggleLikeItem, addToCart, getCartItemQuantity } = useCart();
@@ -10,10 +11,46 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
 
   const handleAddCart = (apparel: Apparel) => {
     if (quantity === 0) {
-      toast.success("Item added to your cart!", { duration: 2000 });
+      toast(
+        <div>
+          🛍️{" "}
+          <span style={{ fontWeight: "bold" }}>
+            {capitalizeWords(apparel.name)}
+          </span>{" "}
+          added to your cart!
+        </div>,
+        {
+          duration: 2000,
+          style: {
+            background: "#dbeafe",
+            color: "#1e40af",
+            fontWeight: "500",
+            borderRadius: "8px",
+            padding: "12px 16px",
+          },
+        }
+      );
       addToCart(apparel);
     } else {
-      toast("Item already in your cart!", { icon: "👋", duration: 2000 });
+      toast(
+        <div>
+          ❤️{" "}
+          <span style={{ fontWeight: "bold" }}>
+            {capitalizeWords(apparel.name)}
+          </span>{" "}
+          already in your cart!
+        </div>,
+        {
+          duration: 2000,
+          style: {
+            background: "#fce7f3",
+            color: "#be185d",
+            fontWeight: "500",
+            borderRadius: "8px",
+            padding: "12px 16px",
+          },
+        }
+      );
     }
   };
 

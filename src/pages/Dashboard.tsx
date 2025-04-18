@@ -8,6 +8,8 @@ import { useCart } from "../context/CartContext";
 import { IoCart } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { Link } from "react-router";
+import toast from "react-hot-toast";
+import { capitalizeWords } from "../../utils/utils";
 
 export default function Dashboard() {
   const [currentIndex, setCurrentIndex] = useState(data.length - 1);
@@ -36,15 +38,70 @@ export default function Dashboard() {
     switch (direction) {
       case "right":
         toggleLikeItem(apparel);
+        toast(
+          <div>
+            ❤️ Added{" "}
+            <span style={{ fontWeight: "bold" }}>
+              {capitalizeWords(apparel.name)}
+            </span>{" "}
+            to your favorites!
+          </div>,
+          {
+            duration: 2000,
+            style: {
+              background: "#fce7f3",
+              color: "#be185d",
+              fontWeight: "500",
+              borderRadius: "8px",
+              padding: "12px 16px",
+            },
+          }
+        );
         break;
       case "up":
         addToCart(apparel);
+        toast(
+          <div>
+            🛍️{" "}
+            <span style={{ fontWeight: "bold" }}>
+              {capitalizeWords(apparel.name)}
+            </span>{" "}
+            added to your cart!
+          </div>,
+          {
+            duration: 2000,
+            style: {
+              background: "#dbeafe",
+              color: "#1e40af",
+              fontWeight: "500",
+              borderRadius: "8px",
+              padding: "12px 16px",
+            },
+          }
+        );
         break;
       case "left":
-        // Pass on the item
+        toast(
+          <div>
+            👋 See you later,{" "}
+            <span style={{ fontWeight: "bold" }}>
+              {capitalizeWords(apparel.name)}
+            </span>
+            !
+          </div>,
+          {
+            duration: 1500,
+            style: {
+              background: "#f3f4f6",
+              color: "#4b5563",
+              fontWeight: "500",
+              borderRadius: "8px",
+              padding: "12px 16px",
+            },
+          }
+        );
         break;
       default:
-        // Restore card position for any other direction
         childRefs[index].current.restoreCard();
         return;
     }

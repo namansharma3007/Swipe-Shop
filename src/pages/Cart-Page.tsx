@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { toast } from "react-hot-toast";
 import useSound from "use-sound";
-import NOTIFICATION from "../assets/notification.mp3";
+import NOTIFICATION from "../assets/notification-success-1.mp3";
 
 export default function Cart() {
   const { cartItems, getTotalCartAmount, getDiscountAmount, clearCart } =
@@ -22,19 +22,28 @@ export default function Cart() {
 
   const checkout = () => {
     if (cartItems.length > 0) {
-      toast("Order placed successfully! Your items will be delivered soon.", {
-        icon: "🎉",
-        duration: 2000,
-      });
+      toast(
+        <span>
+          Order placed successfully! Your items will be delivered soon.
+        </span>,
+        {
+          icon: "🎉",
+          style: {
+            background: "#bbf7d0",
+            color: "#16a34a",
+            fontWeight: "500",
+            borderRadius: "8px",
+            padding: "12px 16px",
+          },
+        }
+      );
       play();
       clearCart();
     }
   };
 
   return (
-    <section
-      className="flex flex-col bg-gray-50 h-max"
-    >
+    <section className="flex flex-col bg-gray-50 h-max">
       {cartItems.length === 0 ? (
         <div className="flex-1 flex flex-col items-center mt-10 p-8">
           <div className="w-20 h-20 rounded-full bg-blue-50 flex items-center justify-center mb-4">
