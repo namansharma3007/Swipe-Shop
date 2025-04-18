@@ -14,7 +14,7 @@ export default function App() {
         style={{ paddingTop: "env(safe-area-inset-top)" }}
         className="flex justify-center h-max min-h-screen w-full bg-gray-400"
       >
-        <div className="w-full h-screen max-w-md flex flex-col shadow-lg md:m-2 m-0 bg-gray-50 sm:rounded-lg rounded-none relative overflow-x-hidden">
+        <div className="w-full h-screen max-w-md flex flex-col shadow-lg md:m-2 m-0 bg-white sm:rounded-lg rounded-none relative overflow-x-hidden">
           <Header />
           <div className="flex-1 relative overflow-y-auto">
             <Routes>

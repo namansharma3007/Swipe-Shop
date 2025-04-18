@@ -43,7 +43,7 @@ export default function Cart() {
   };
 
   return (
-    <section className="flex flex-col bg-gray-50 h-max">
+    <section className="flex flex-col h-max">
       {cartItems.length === 0 ? (
         <div className="flex-1 flex flex-col items-center mt-10 p-8">
           <div className="w-20 h-20 rounded-full bg-blue-50 flex items-center justify-center mb-4">
@@ -67,7 +67,7 @@ export default function Cart() {
           </div>
 
           {/* Order Summary */}
-          <div className="bg-white p-4 flex flex-col gap-4">
+          <div className="bg-white p-4 flex flex-col gap-4 border-t border-b">
             <h2 className="font-bold text-lg">Order Summary</h2>
 
             <div className="flex flex-col gap-3 text-[15px]">

@@ -96,7 +96,7 @@ export default function Dashboard() {
   };
 
   return (
-    <section className="flex flex-col relative min-h-screen p-4">
+    <section className="flex flex-col relative min-h-screen p-4 bg-gray-50">
       <div className="h-[500px] relative">
         {data.map((apparel, index) => (
           <TinderCard
