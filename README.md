@@ -130,6 +130,44 @@ npx cap open android
    ```
    This will open your app in the emulator and automatically reload when you make changes to your code.
 
+### Building APK for Personal Use
+
+To build a debug APK for personal use and testing:
+
+1. First, build your web app:
+
+```bash
+npm run build
+```
+
+2. Sync with Android:
+
+```bash
+npx cap sync android
+```
+
+3. Build the debug APK:
+
+```bash
+cd android
+./gradlew assembleDebug
+```
+
+The debug APK will be generated at:
+
+```
+android/app/build/outputs/apk/debug/app-debug.apk
+```
+
+You can install this APK on your Android device by:
+
+1. Transferring the APK file to your device
+2. Opening the file on your device
+3. Allowing installation from unknown sources if prompted
+4. Following the installation prompts
+
+Note: This debug APK is suitable for personal use and testing, but cannot be published to the Play Store.
+
 ### Common Issues and Solutions
 
 1. If you get a "Could not find or load main class" error:
