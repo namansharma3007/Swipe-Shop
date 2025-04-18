@@ -23,7 +23,7 @@ export default function Cart() {
         </span>,
         {
           icon: "🎉",
-          duration: 1500,
+          duration: 2500,
           style: {
             background: "#bbf7d0",
             color: "#16a34a",
