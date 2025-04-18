@@ -2,7 +2,6 @@ import { formatNumberWithCommas, getDiscountedPrice } from "../../utils/utils";
 import { FaHeart, FaCartPlus } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 import { toast } from "react-hot-toast";
-import { capitalizeWords } from "../../utils/utils";
 
 export function MiniCard({ apparel }: { apparel: Apparel }) {
   const { toggleLikeItem, addToCart, getCartItemQuantity } = useCart();
@@ -11,16 +10,9 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
 
   const handleAddCart = (apparel: Apparel) => {
     if (quantity === 0) {
-      toast(
-        <div>
-          🛍️{" "}
-          <span style={{ fontWeight: "bold" }}>
-            {capitalizeWords(apparel.name)}
-          </span>{" "}
-          added to your cart!
-        </div>,
+      toast('🛍️ Item added to your cart!',
         {
-          duration: 2000,
+          duration: 1500,
           style: {
             background: "#dbeafe",
             color: "#1e40af",
@@ -32,16 +24,9 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
       );
       addToCart(apparel);
     } else {
-      toast(
-        <div>
-          ❤️{" "}
-          <span style={{ fontWeight: "bold" }}>
-            {capitalizeWords(apparel.name)}
-          </span>{" "}
-          already in your cart!
-        </div>,
-        {
-          duration: 2000,
+      toast('❤️ Item already in your cart!',
+          {
+          duration: 1500,
           style: {
             background: "#fce7f3",
             color: "#be185d",
@@ -69,7 +54,7 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
         )}
         <button
           type="button"
-          className="p-2 rounded-full bg-white absolute right-3 top-3 text-red-500 cursor-pointer shadow-sm"
+          className="p-2 rounded-full bg-white absolute right-3 top-3 text-red-500 hover:scale-110 ease-in-out duration-150 cursor-pointer shadow-sm"
           onClick={() => toggleLikeItem(apparel)}
         >
           <FaHeart size={16} />
@@ -103,7 +88,7 @@ export function MiniCard({ apparel }: { apparel: Apparel }) {
         <div className="flex justify-end">
           <button
             type="button"
-            className="bg-red-500 text-white rounded-lg px-4 py-2 cursor-pointer"
+            className="bg-red-500 hover:bg-red-600 text-white  rounded-lg px-4 py-2 cursor-pointer"
             onClick={() => handleAddCart(apparel)}
           >
             <FaCartPlus />

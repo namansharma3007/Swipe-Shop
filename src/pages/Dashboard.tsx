@@ -9,7 +9,6 @@ import { IoCart } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { Link } from "react-router";
 import toast from "react-hot-toast";
-import { capitalizeWords } from "../../utils/utils";
 
 export default function Dashboard() {
   const [currentIndex, setCurrentIndex] = useState(data.length - 1);
@@ -38,16 +37,9 @@ export default function Dashboard() {
     switch (direction) {
       case "right":
         toggleLikeItem(apparel);
-        toast(
-          <div>
-            ❤️ Added{" "}
-            <span style={{ fontWeight: "bold" }}>
-              {capitalizeWords(apparel.name)}
-            </span>{" "}
-            to your favorites!
-          </div>,
+        toast('❤️ Added to your favorites!',
           {
-            duration: 2000,
+            duration: 1500,
             style: {
               background: "#fce7f3",
               color: "#be185d",
@@ -60,16 +52,9 @@ export default function Dashboard() {
         break;
       case "up":
         addToCart(apparel);
-        toast(
-          <div>
-            🛍️{" "}
-            <span style={{ fontWeight: "bold" }}>
-              {capitalizeWords(apparel.name)}
-            </span>{" "}
-            added to your cart!
-          </div>,
+        toast("🛍️ Added to your cart!",
           {
-            duration: 2000,
+            duration: 1500,
             style: {
               background: "#dbeafe",
               color: "#1e40af",
@@ -81,14 +66,7 @@ export default function Dashboard() {
         );
         break;
       case "left":
-        toast(
-          <div>
-            👋 See you later,{" "}
-            <span style={{ fontWeight: "bold" }}>
-              {capitalizeWords(apparel.name)}
-            </span>
-            !
-          </div>,
+        toast("👋 See you later!",
           {
             duration: 1500,
             style: {
@@ -167,7 +145,7 @@ export default function Dashboard() {
         <div className="flex items-center justify-center gap-4 mt-20">
           <button
             type="button"
-            className="p-5 bg-red-300 text-red-500 rounded-full disabled:opacity-50"
+            className="p-5 bg-red-300 text-red-500 hover:scale-105 ease-in-out duration-200 rounded-full disabled:opacity-50"
             onClick={() => swipe("left")}
             disabled={!canSwipe}
           >
@@ -175,7 +153,7 @@ export default function Dashboard() {
           </button>
           <button
             type="button"
-            className="p-5 bg-blue-300 text-blue-500 rounded-full disabled:opacity-50"
+            className="p-5 bg-blue-300 text-blue-500 hover:scale-105 ease-in-out duration-200 rounded-full disabled:opacity-50"
             onClick={() => swipe("up")}
             disabled={!canSwipe}
           >
@@ -183,7 +161,7 @@ export default function Dashboard() {
           </button>
           <button
             type="button"
-            className="p-5 bg-pink-300 text-pink-500 rounded-full disabled:opacity-50"
+            className="p-5 bg-pink-300 text-pink-500 hover:scale-105 ease-in-out duration-200 rounded-full disabled:opacity-50"
             onClick={() => swipe("right")}
             disabled={!canSwipe}
           >
